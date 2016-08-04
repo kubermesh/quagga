@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chown -R quagga:quagga /var/run/quagga
+
+exec $@
