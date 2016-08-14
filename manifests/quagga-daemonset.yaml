@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   name: quagga
+  namespace: kubermesh
 spec:
   template:
     metadata:
