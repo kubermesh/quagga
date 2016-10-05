@@ -13,9 +13,11 @@ spec:
       containers:
         - resources:
             requests:
-              cpu: 0.15
+              cpu: 0.05
           securityContext:
-            privileged: true
+            capabilities:
+              add:
+              - NET_ADMIN
           image: kubermesh/quagga
           name: zebra
           command: [ "/usr/sbin/zebra", "-r" ]
@@ -24,9 +26,7 @@ spec:
               mountPath: /var/run/quagga
         - resources:
             requests:
-              cpu: 0.15
-          securityContext:
-            privileged: true
+              cpu: 0.05
           image: kubermesh/quagga
           name: ospf6
           command: [ "/usr/sbin/ospf6d" ]
