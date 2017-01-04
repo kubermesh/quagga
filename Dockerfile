@@ -1,11 +1,10 @@
-FROM alpine:latest
+FROM alpine:3.4
 
 MAINTAINER mike@mikebryant.me.uk
 
 RUN apk --no-cache add quagga
 
 COPY init /sbin/my_init
-COPY quagga /etc/quagga
 
 VOLUME /var/run/quagga
 
